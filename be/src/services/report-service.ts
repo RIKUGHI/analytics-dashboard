@@ -99,31 +99,6 @@ export default class ReportService {
         },
         []
       );
-      
-
-      // const queries = [
-      //   {
-      //     vendor_id: 'CMT',
-      //     query: `SELECT count(*) WHERE vendor_id='CMT' and dropoff_datetime between '${data.startDate}' and '${data.endDate}'`,
-      //   },
-      //   {
-      //     vendor_id: 'VTS',
-      //     query: `SELECT count(*) WHERE vendor_id='VTS' and dropoff_datetime between '${data.startDate}' and '${data.endDate}'`,
-      //   },
-      //   {
-      //     vendor_id: 'DDS',
-      //     query: `SELECT count(*) WHERE vendor_id='DDS' and dropoff_datetime between '${data.startDate}' and '${data.endDate}'`,
-      //   },
-      // ];
-      // const [cmtRes, vtsRes, ddsRes] = await Promise.all(
-      //   queries.map(query =>
-      //     axios.get<Count>('https://data.cityofnewyork.us/resource/gkne-dk5s.json', {
-      //       params: {
-      //         $query: query.query,
-      //       },
-      //     })
-      //   )
-      // );
   
       this.dbService.updateRecord('report', (summaryReport) => {
         return summaryReport.id === data.id
